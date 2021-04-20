@@ -31,6 +31,10 @@ class dosen_model extends CI_Model
         // $this->db->set('username', $data['username']);
         $this->db->set('Name', $data['name']);
         $this->db->set('email', $data['email']);
+        $this->db->set('password', $data['password']);
+        $this->db->set('alamat', $data['alamat']);
+        $this->db->set('nomortelefon', $data['nomortelefon']);
+        $this->db->set('ttl', $data['ttl']);
         $this->db->update('dosen');
     }
 
