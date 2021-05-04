@@ -16,7 +16,8 @@ class mahasiswa_model extends CI_Model
 
     public function getprofile($user)
     {
-        $query = $this->db->where('email', $data)->get('mahasiswa')->row_array();
+        $email = $this->db->where('email', $user['email'])->get('mahasiswa')->row_array(); #untuk searching menggunakan nim
+        $query = $this->db->where('NIM', $email['NIM'])->get('mahasiswa')->row_array();
         if($query){
           return $query;
         }
@@ -25,7 +26,7 @@ class mahasiswa_model extends CI_Model
           return false;
         };
     }
-    public function setprofile($data)
+    public function updateData($data)
     {
         // $this->db->set('username', $data['username']);
         $this->db->set('Name', $data['name']);
