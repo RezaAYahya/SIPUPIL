@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class mahasiswa_model extends CI_Model
+class registrasimk_model extends CI_Model
 {
     //Fungsi yang mengembalikan data yang row array
     public function getpilihan($data)
