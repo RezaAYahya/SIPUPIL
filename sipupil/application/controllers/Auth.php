@@ -1,12 +1,12 @@
-<?php
+<!-- <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Auth extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('dosen_model');
-    $this->load->model('mahasiswa_model');
+    $this->load->model('m_dosen');
+    $this->load->model('m_mhs');
     $this->load->library('form_validation');
     $this->load->library('session');
 
@@ -15,18 +15,14 @@ class Login extends CI_Controller {
 	{
       $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
       $this->form_validation->set_rules('password', 'Password', 'trim|required');
-      $data['title'] = 'login page';
       if ($this->form_validation->run() == false) {
           $data['title'] = 'Login Page';
           $this->load->view('templates/auth_header', $data);
-          $this->load->view('auth/menu_login');
+          $this->load->view('auth/login');
           $this->load->view('templates/auth_footer');
-          // echo 'masuk login';
       } else {
           $this->_login();
-    // } else{
-      echo 'gagal';
-    }
+      }
 		// echo "test";
   }
 
@@ -48,9 +44,9 @@ class Login extends CI_Controller {
       } else {
           $verify['email'] = $this->input->post('email');
           $verify['password'] = $this->input->post('password');
-          if ($this->dosen_model->verifyDos($verify)) {
+          if ($this->m_dosen->verifyDos($verify)) {
 
-            $user_d = $this->dosen_model->getprofile($verify);
+            $user_d = $this->m_dosen->getprofile($this->input->post('username'));
             $this->session->set_userdata('username', $user_d['username']);
 
             // redirect('/NAMACONTROLLER DASHBOARD DOSEN');
@@ -78,12 +74,12 @@ class Login extends CI_Controller {
       } else {
           $verify['email'] = $this->input->post('email');
           $verify['password'] = $this->input->post('password');
-          if ($this->mahasiswa_model->verifyMhs($verify)) {
+          if ($this->m_mhs->verifyMhs($verify)) {
 
-            $user_d = $this->mahasiswa_model->getprofile($verify);
+            $user_d = $this->m_mhs->getprofile($this->input->post('email'));
             $this->session->set_userdata('username', $user_d['username']);
-            // echo $user_d['username'];
-            redirect('mahasiswa');
+
+            // redirect('/NAMACONTROLLER DASHBOARD MAHASISWA');
           } else {
             $error['error_message'] = "Username or password invalid";
             $this->load->view('templates/auth_header');
@@ -118,4 +114,4 @@ class Login extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> You have been logout</div>');
         redirect('auth');
   }
-}
+} -->
