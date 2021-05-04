@@ -1,2 +1,5 @@
 # SIPUPIL
-BRANCH UNTUK CODINGAN SIPUPIL
+Branch untuk codingan SIPUPIL.
+
+# FRAMEWORK
+CodeIgniter 3
