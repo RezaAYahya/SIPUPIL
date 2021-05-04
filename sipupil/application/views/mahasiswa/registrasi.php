@@ -1,3 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== MAIN CSS ===== -->
+    <link rel="stylesheet" href="assets/vendor/sb-admin/sb-admin-2.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- DATATABLES -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+
+    <title>SIPUPIL</title>
+</head>
+
 <body id="body-pd">
     <!--========== HEADER ==========-->
     <header class="header">
@@ -16,9 +39,9 @@
             </div>
         </div>
     </header>
-    <!-- END HEADER -->
+    <!--========== END HEADER ==========-->
 
-    <!-- NAVBAR -->
+    <!--========== NAVBAR ==========-->
     <div class="l-navbar" id="navbar">
         <nav class="nav">
             <div>
@@ -37,7 +60,7 @@
                         <span class="nav__name">Profile</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="forum_mahasiswa.html" class="nav__link">
                         <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Forum</span>
                     </a>
@@ -81,7 +104,7 @@
             </a>
         </nav>
     </div>
-    <!-- END NAVBAR -->
+    <!--========== END NAVBAR ==========-->
 
     <!--========== CONTENTS ==========-->
     <main>
@@ -177,6 +200,7 @@
         </div>
         <!-- END TABLE MATKUL YG AKAN DIAMBIL -->
 
+        <!-- VERIFIKASI -->
         <div class="container-fluid">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -201,6 +225,26 @@
                 </div>
             </div>
         </div>
+        <!-- END VERIFIKASI -->
 
     </main>
-    <!-- END CONTENTS -->
+    <!--========== END CONTENTS ==========-->
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <!-- ===== IONICONS ===== -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+    <!-- ===== MAIN JS ===== -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/matkul.js"></script>
+
+    <!-- DATATABLES JS -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+
+</body>
+
+</html>
