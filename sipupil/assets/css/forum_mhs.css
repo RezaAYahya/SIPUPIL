@@ -1,0 +1,26 @@
+.kotak-forum {
+  width: 1400px;
+  margin: auto;
+  padding: 30px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+}
+
+.card-body-forum {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+
+.card-header-forum {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #f8f9fc;
+  border-bottom: 1px solid #e3e6f0;
+  border-top: 1px solid #e3e6f0;
+  border-left: 1px solid #e3e6f0;
+  border-right: 1px solid #e3e6f0;
+}
