@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="assets/css/sb-admin-2.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="<?= base_url(). 'assets/css/sb-admin-2.css'?>">
+    <link rel="stylesheet" href="<?= base_url(). 'assets/css/styles.css'?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
     <title>SIPUPIL</title>
