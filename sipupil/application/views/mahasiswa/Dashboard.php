@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="<?= base_url(). 'assets/css/sb-admin-2.css'?>">
-    <link rel="stylesheet" href="<?= base_url(). 'assets/css/styles.css'?>">
+    <link rel="stylesheet" href="<?= base_url() . 'assets/vendor/sb-admin/sb-admin-2.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . 'assets/css/styles.css' ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
     <title>SIPUPIL</title>
@@ -57,7 +57,7 @@
                         <span class="nav__name">Forum</span>
                     </a>
 
-                    <div class="nav__link collapse">
+                    <div class="nav__link collapse__nav">
                         <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Registrasi</span>
 
@@ -70,7 +70,7 @@
                         </ul>
                     </div>
 
-                    <div class="nav__link collapse">
+                    <div class="nav__link collapse__nav">
                         <ion-icon name="time-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Jadwal</span>
 

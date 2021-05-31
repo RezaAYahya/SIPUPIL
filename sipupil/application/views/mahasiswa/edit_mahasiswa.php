@@ -58,7 +58,7 @@
                         <span class="nav__name">Forum</span>
                     </a>
 
-                    <div class="nav__link collapse">
+                    <div class="nav__link collapse__nav">
                         <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Registrasi</span>
 
@@ -71,7 +71,7 @@
                         </ul>
                     </div>
 
-                    <div class="nav__link collapse">
+                    <div class="nav__link collapse__nav">
                         <ion-icon name="time-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Jadwal</span>
 
