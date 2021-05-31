@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/vendor/sb-admin/sb-admin-2.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/edit_profile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <title>SIPUPIL</title>
+</head>
+
+<body id="body-pd">
+    <!--========== HEADER ==========-->
+    <header class="header">
+        <div class="header__container">
+            <img src="assets/img/perfil.jpg" alt="" class="header__img">
+
+            <a href="#" class="header__logo">Sekretaris Prodi</a>
+
+            <div class="header__search">
+                <input type="search" placeholder="Search" class="header__input">
+                <i class='bx bx-search header__icon'></i>
+            </div>
+
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav__brand">
+                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <a href="#" class="nav__logo">SIPUPIL</a>
+                </div>
+                <div class="nav__list">
+                    <a href="index sekpro.html" class="nav__link">
+                        <ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Dashboard</span>
+                    </a>
+
+                    <a href="input jadwal.html" class="nav__link active">
+                        <ion-icon name="time-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Input Jadwal</span>
+                    </a>
+
+                    <a href="input matkul.html" class="nav__link">
+                        <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Input Matkul</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="#" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+
+    <!--========== CONTENTS ==========-->
+    <main>
+
+        <div class="kotak-edit">
+            <h1>Input Jadwal</h1>
+            <div class="row">
+                <div class="col-lg">
+                    <form>
+
+                        <div class="form-group-row">
+                            <label for="kode_matkul" class="col-sm-6 col-form-label">Kode Mata Kuliah</label>
+                            <div class="col-sm">
+                                <input type="text" class="form-control" id="kode_matkul" name="kode_matkul">
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <label for="matkul" class="col-sm-6 col-form-label">Nama Mata Kuliah</label>
+                            <div class="col-sm">
+                                <input type="text" class="form-control" id="matkul" name="matkul">
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <label for="hari" class="col-sm-6 col-form-label">Hari</label>
+                            <div class="col-sm">
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                    <option selected>Choose...</option>
+                                    <option value="senin">Senin</option>
+                                    <option value="selasa">Selasa</option>
+                                    <option value="rabu">Rabu</option>
+                                    <option value="kamis">Kamis</option>
+                                    <option value="jumat">Jumat</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <label for="waktu" class="col-sm-6 col-form-label">Waktu Mata Kuliah</label>
+                            <div class="col-sm">
+                                <input type="time" class="form-control" id="waktu" name="waktu">
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <label for="SKS" class="col-sm-2 col-form-label">SKS</label>
+                            <div class="col-sm">
+                                <input type="text" class="form-control" id="SKS" name="SKS">
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary center-block">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===== IONICONS ===== -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+    <!-- ===== MAIN JS ===== -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
