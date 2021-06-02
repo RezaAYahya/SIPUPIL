@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/edit_profile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--========== END CSS ==========-->
 
     <title>SIPUPIL</title>
 </head>
@@ -103,7 +104,7 @@
     <main>
         <!--========== FORM EDIT ==========-->
         <div class="kotak-edit">
-            <h1>Edit Profile Mahasiswa</h1>
+            <h1>Edit Profile</h1>
             <div class="row">
                 <div class="col-lg">
                     <form>
