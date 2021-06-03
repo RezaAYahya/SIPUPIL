@@ -23,6 +23,6 @@ class dosen_model extends CI_Model
         else
         {
           return false;
-        }
+        };
     }
 }

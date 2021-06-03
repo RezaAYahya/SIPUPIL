@@ -20,6 +20,11 @@ class Dashboardmhs extends CI_Controller {
 
 				$this->load->view('mahasiswa/Dashboard',$user_d);
 				$this->load->View('templates/dashboard_footer');
+
+				$this->form_validation->set_rules('email', 'Email', 'required|trim');
+	      $this->form_validation->set_rules('password', 'Password', 'required|trim');
+
+				
 			}
 
 		}
