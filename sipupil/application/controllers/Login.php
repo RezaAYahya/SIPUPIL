@@ -91,24 +91,7 @@ class Login extends CI_Controller {
             $this->load->view('templates/auth_footer');
           }
       }
-      // kalau usernya ada
-      // if ($user) {
-      //     // cek password
-      //     if (password_verify($password, $user['password'])) {
-      //         $data = [
-      //             'email' => $user['email'],
-      //             'role_id' => $user['role_id']
-      //         ];
-      //         $this->session->set_userdata($data);
-      //         redirect('user');
-      //     } else {
-      //         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Wrong password</div>');
-      //         redirect('auth');
-      //     }
-      // } else {
-      //     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Email is not registered</div>');
-      //     redirect('auth');
-      // }
+
   }
 
   public function logout()
