@@ -45,7 +45,6 @@ class Mahasiswa extends CI_Controller
 
       $user['email'] = $this->session->userdata('email');
       $user_d['data_m'] = $this->mahasiswa_model->getprofile($user);
-      $user_d['status'] = '1';
 
       if ($user_d != null){
         // echo 'menu registrasi';

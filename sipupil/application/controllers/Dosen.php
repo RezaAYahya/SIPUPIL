@@ -30,11 +30,10 @@ class Dosen extends CI_Controller
         echo 'ini method update';
     }
 
-    public function editmahasiswa(){
+    public function editdosen(){
 
       $user['email'] = $this->session->userdata('email');
       $user_d['data_m'] = $this->mahasiswa_model->getprofile($user);
-      $user_d['mahasiswa'] = '1';
 
       if ($user_d != null){
         // echo 'menu registrasi';
