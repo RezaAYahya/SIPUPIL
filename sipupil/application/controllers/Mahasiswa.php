@@ -43,8 +43,9 @@ class Mahasiswa extends CI_Controller
     }
     public function editmahasiswa(){
 
-      $user['email'] = $this->session->userdata('email');
+      $user_d['email'] = $this->session->userdata('email');
       $user_d['data_m'] = $this->mahasiswa_model->getprofile($user);
+      $user_d['mahasiswa'] = '1';
 
       if ($user_d != null){
         // echo 'menu registrasi';
@@ -57,4 +58,16 @@ class Mahasiswa extends CI_Controller
         echo 'Error';
       }
   }
+  public function forummahasiswa(){
+    $user_d['email'] = $this->session->userdata('email');
+
+    if ($user_d != null){
+      $this->load->view('templates/dashboard_header');
+      $this->load->view('mahasiswa/forum_mahasiswa',$user_d);
+    }
+    else {
+      echo "Error";
+    }
+  }
+
 }

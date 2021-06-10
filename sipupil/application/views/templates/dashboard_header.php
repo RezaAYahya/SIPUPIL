@@ -6,11 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="<?= base_url(). 'assets/css/sb-admin-2.css'?>">
-    <link rel="stylesheet" href="<?= base_url(). 'assets/css/styles.css'?>">
+    <?php if (isset($data_m)) { ?>
+      <link rel="stylesheet" href="<?= base_url(). 'assets/css/sb-admin-2.css'?>">
+    <?php } ?>
+    <link rel="stylesheet" href="<?php echo base_url().'assets/vendor/sb-admin/sb-admin-2.css' ?>">
+    <link rel="stylesheet" href="<?php echo base_url().'assets/css/styles.css' ?>">
+
+    <?php if($this->session->userdata('hias' == 'editMhs')){ ?>
+        <link rel="stylesheet" href="<?php echo base_url().'assets/css/edit_profile.css' ?>">
+    <?php } ?>
+    
+    <?php if($this->session->userdata('hias' == 'forumMhs')){ ?>
+        <link rel="stylesheet" href="assets/css/forum_mhs.css">
+    <?php } ?>
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <?=if   ?>
+a
     <title>SIPUPIL</title>
+    
 </head>
 
 <body id="body-pd">
@@ -42,32 +58,23 @@
                     <a href="#" class="nav__logo">SIPUPIL</a>
                 </div>
                 <div class="nav__list">
-                    <a href="#" class="nav__link active">
+                    <a href="<?php echo base_url().'mahasiswa' ?>" class="nav__link active">
                         <ion-icon name="home-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Dashboard</span>
                     </a>
 
-                    <a href="editprofile_mhs.html" class="nav__link">
+                    <a href="<?php echo base_url().'mahasiswa/editmahasiswa' ?>" class="nav__link">
                         <ion-icon name="person-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Profile</span>
                     </a>
 
                     <!-- 1 = active 0 = tidak aktif -->
-                    <?= if(isset($mahasiswa=='1')) {?>
-                    <a href="forum_mahasiswa.html" class="nav__link">
-                    <?= }?>
-                    <?= if(isset($dosen=='1') or isset($dosenwali='1')) {?>
-                    <a href="forum_dosen.html" class="nav__link">
-                    <?= }?>
-                    <?= if(isset($dosenwali=='active')) {?>
-                    <a href="forum_mahasiswa.html" class="nav__link">
-                    <?= }?>
-
+                    <a href="<?php echo base_url().'mahasiswa/forumahasiswa'?>" class="nav__link">
                         <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Forum</span>
                     </a>
 
-
+                    
                     <div class="nav__link collapse">
                         <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Registrasi</span>

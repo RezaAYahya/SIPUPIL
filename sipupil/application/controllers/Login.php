@@ -75,17 +75,24 @@ class Login extends CI_Controller {
         $this->load->view('templates/auth_header');
         $this->load->view('auth/loginmhs');
         $this->load->view('templates/auth_footer');
+
       } else {
           $verify['email'] = $this->input->post('email');
           $verify['password'] = $this->input->post('password');
-          if ($this->mahasiswa_model->verifyMhs($verify)) {
 
+          if ($this->mahasiswa_model->verifyMhs($verify)) {
             $user_d = $this->mahasiswa_model->getprofile($verify);
+
             $this->session->set_userdata('username', $user_d['username']);
+            $this->session->set_userdata('email', $user_d['email']);
             // echo $user_d['username'];
+            $this->session->set_userdata('hias','dashboard');
+            $this->session->set_userdata('status','mahasiswa');
             redirect('mahasiswa');
+            
           } else {
             $error['error_message'] = "Username or password invalid";
+
             $this->load->view('templates/auth_header');
             $this->load->view('auth/loginmhs', $error);
             $this->load->view('templates/auth_footer');
