@@ -77,16 +77,16 @@ class Login extends CI_Controller {
         $this->load->view('templates/auth_footer');
 
       } else {
-          $verify['email'] = $this->input->post('email');
-          $verify['password'] = $this->input->post('password');
+          $data['email'] = $this->input->post('email');
+          $data['password'] = $this->input->post('password');
 
-          if ($this->mahasiswa_model->verifyMhs($verify)) {
-            $user_d = $this->mahasiswa_model->getprofile($verify);
-
+          if ($this->mahasiswa_model->verifyMhs($data)) {
+            $user_d = $this->mahasiswa_model->getprofile($data);
+            
+            // memasukkan variable penting untuk digunakan pada setiap sesi
             $this->session->set_userdata('username', $user_d['username']);
+            $this->session->set_userdata('Name',$user_d['Name']);
             $this->session->set_userdata('email', $user_d['email']);
-            // echo $user_d['username'];
-            $this->session->set_userdata('hias','dashboard');
             $this->session->set_userdata('status','mahasiswa');
             redirect('mahasiswa');
             

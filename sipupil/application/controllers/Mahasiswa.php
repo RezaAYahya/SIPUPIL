@@ -7,6 +7,8 @@ class Mahasiswa extends CI_Controller
       parent::__construct();
       $this->load->library('session');
       $this->load->model('mahasiswa_model');
+      $this->load->library('form_validation');
+      $this->load->model('editProfile');
     }
 
     public function index()
@@ -14,10 +16,11 @@ class Mahasiswa extends CI_Controller
 
         $user['email'] = $this->session->userdata('email');
         $user_d['data_m'] = $this->mahasiswa_model->getprofile($user);
+        $user_d['css'] = 'dashboardMhs';
         // echo $user;
 
         if ($user_d != null){
-          // echo $user_d['username'];
+          // echo implode($user_d['data_m']);
           $this->load->view('templates/dashboard_header',$user_d);
           $this->load->view('mahasiswa/Dashboard',$user_d);
           $this->load->View('templates/dashboard_footer');
@@ -32,8 +35,8 @@ class Mahasiswa extends CI_Controller
 
     public function registrasi(){
 
-      $user['email'] = $this->session->userdata('email');
-      $user_d['data_m'] = $this->mahasiswa_model->getprofile($user);
+      $data['email'] = $this->session->userdata('email');
+      $user_d['data_m'] = $this->mahasiswa_model->getprofile($data);
 
       if ($user_d!=null){
         $this->load->view('templates/dashboard_header',$user_d);
@@ -43,31 +46,41 @@ class Mahasiswa extends CI_Controller
     }
     public function editmahasiswa(){
 
-      $user_d['email'] = $this->session->userdata('email');
-      $user_d['data_m'] = $this->mahasiswa_model->getprofile($user);
-      $user_d['mahasiswa'] = '1';
+      $data['email'] = $this->session->userdata('email');
+      //data_m harus selalu ada untuk menampilkan css
+      $user_d['data_m'] = $this->mahasiswa_model->getprofile($data);
+      //css harus selalu diupdate apabila berganti halaman fungsionalitas
+      $user_d['css'] = 'editMhs';
+      
+      if ($user_d != null) {
+        //mengatur rules
+        $this->form_validation->set_rules('email','Email','required|valid_email');
+        $this->form_validation->set_rules('ttl','TTL','required|trim');
+        $this->form_validation->set_rules('notelp','NoTelp','required');
+        $this->form_validation->set_rules('alamat','Alamat','required');
 
-      if ($user_d != null){
-        // echo 'menu registrasi';
-        // echo $user['email'];
-
-        $this->load->view('templates/dashboard_header');
-        $this->load->view('mahasiswa/edit_mahasiswa',$user_d);
+        // $this->form_validation->run() == false berarti rules belum dijalankan
+        if ($this->form_validation->run() == false){
+          $this->load->view('templates/dashboard_header',$user_d);
+          $this->load->view('mahasiswa/edit_mahasiswa',$user_d);
+          
+        } else {
+          //dictionary
+          $data = [
+            'email' => $this->input->post('email'),
+            'TTL' => $this->input->post('ttl'),
+            'alamat' => $this->input->post('alamat'),
+            'nomortelfon' => $this->input->post('notelp'),
+            'ortu' => $this->input->post('ortu'),
+            'noortu' => $this->input->post('noortu')
+          ];
+          // kirim data ke mdoel
+          $this->editProfile->UpdateProfile($data);
+          //redirect
+          redirect('mahasiswa/editmahasiswa');
+        }
       }
-      else {
-        echo 'Error';
-      }
+      
   }
-  public function forummahasiswa(){
-    $user_d['email'] = $this->session->userdata('email');
-
-    if ($user_d != null){
-      $this->load->view('templates/dashboard_header');
-      $this->load->view('mahasiswa/forum_mahasiswa',$user_d);
-    }
-    else {
-      echo "Error";
-    }
-  }
-
+ 
 }

@@ -79,7 +79,7 @@ class Auth extends CI_Controller {
             $user_d = $this->m_mhs->getprofile($this->input->post('email'));
             $this->session->set_userdata('username', $user_d['username']);
 
-            // redirect('/NAMACONTROLLER DASHBOARD MAHASISWA');
+           redirect('mahasiswa');
           } else {
             $error['error_message'] = "Username or password invalid";
             $this->load->view('templates/auth_header');
@@ -114,4 +114,4 @@ class Auth extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> You have been logout</div>');
         redirect('auth');
   }
-} -->
+}

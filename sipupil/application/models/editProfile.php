@@ -29,17 +29,18 @@ class editprofile extends CI_Model
   public function UpdateProfile($data)
   {
       // CI memiliki query builder untuk mengupdate data seperti database yang menggunakan "alter table set_value"
-      $this->db->set('Name', $data['name']);
       $this->db->set('email', $data['email']);
-      $this->db->set('password', $data['password']);
       $this->db->set('alamat', $data['alamat']);
-      $this->db->set('nomortelefon', $data['nomortelefon']);
-      $this->db->set('TTL', $data['ttl']);
+      $this->db->set('nomortelfon', $data['nomortelfon']);
+      $this->db->set('TTL', $data['TTL']);
+      $this->db->set('ortu', $data['ortu']);
+      $this->db->set('noortu', $data['noortu']);
+      
       $status = $this->session->userdata['status']; #consolidate at conditional exrpession
       
       if ($status == 'mahasiswa'){ #apabila yang diupdate
         $this->db->update('mahasiswa');
-      }elseif(($status == 'dosen') || ($status == 'dosenwali')){
+      } elseif(($status == 'dosen') || ($status == 'dosenwali')){
         $this->db->update('dosen');
       }
   }

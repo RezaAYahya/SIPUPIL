@@ -5,7 +5,7 @@
             <h1>Edit Profile Mahasiswa</h1>
             <div class="row">
                 <div class="col-lg">
-                    <form>
+                    <form action="<?= base_url().'mahasiswa/editmahasiswa'?>" method="post">
                         <div class="form-group-row">
                             <label for="nim" class="col-sm col-form-label">NIM</label>
                             <div class="col-sm">
@@ -24,6 +24,7 @@
                             <label for="email" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm">
                                 <input type="text" class="form-control" id="email" name="email" placeholder="email" value="<?php echo $data_m['email']?>">
+                                <?php echo form_error('email','<small class="text-danger-pl-3">','</small>') ?>
                             </div>
                         </div>
 
@@ -33,7 +34,6 @@
                                 <input type="text" class="form-control" id="ttl" name="ttl" placeholder="ttl" value="<?php echo $data_m['TTL']?>">
                             </div>
                         </div>
-
                         <div class="form-group-row">
                             <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                             <div class="col-sm">
@@ -51,21 +51,22 @@
                         <div class="form-group-row">
                             <label for="ortu" class="col-sm-4 col-form-label">Nama Orang Tua</label>
                             <div class="col-sm">
-                                <input type="text" class="form-control" id="ortu" name="ortu">
+                                <input type="text" class="form-control" id="ortu" name="ortu" value="<?php echo $data_m['ortu']?>">
                             </div>
                         </div>
 
                         <div class="form-group-row">
                             <label for="noortu" class="col-sm-6 col-form-label">Nomor Telpon Orang Tua</label>
                             <div class="col-sm">
-                                <input type="text" class="form-control" id="noortu" name="noortu">
+                                <input type="text" class="form-control" id="noortu" name="noortu" value="<?php echo $data_m['noortu']?>">
                             </div>
                         </div>
 
                         <!-- Button -->
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary center-block">Submit</button>
-                            <button type="delete" class="btn btn-primary center-block">Reset</button>
+                            <!-- <button type="submit" class="btn btn-primary center-block">Submit</button> -->
+                            <!-- <button type="delete" class="btn btn-primary center-block">Reset</button> -->
                         </div>
                     </form>
                 </div>

@@ -19,7 +19,7 @@ class registrasimk_model extends CI_Model
     public function ambil($data){
       $a = $this->db->where('Mata_Kuliah', $data['matakuliah'])->get('matakuliah')->row_array();
       $b = $this->db->where('ID_registrasi', $a['ID_Matkul'])->get('pilihan')->row_array();
-      $c = $this->db->query('select max(ID_terpilih) from terpilih')
+      $c = $this->db->query('select max(ID_terpilih) from terpilih');
 
       $this->db->query("INSERT INTO `terpilih` (`ID_terpilih`, `ID_Registrasi`, `NIM`) VALUES ($VarA,$VarB, '1301180063');");
     }
