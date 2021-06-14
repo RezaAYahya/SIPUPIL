@@ -6,8 +6,8 @@ class RegistrasiMK extends CI_Controller {
 	public function __construct()
   {
     parrent::__construct();
-    $this->load->model('registrasimk_model')
-    $this->load->model('mahasiswa_model')
+    $this->load->model('registrasimk_model');
+    $this->load->model('mahasiswa_model');
   }
 	public function index()
 	{
@@ -32,3 +32,7 @@ class RegistrasiMK extends CI_Controller {
 		echo 'fungsi memindahkan pilihan ke terpilih';
 		redirect('registrasimk');
 	}
+  
+
+  //Test test satu dua tiga anjir mantap
+}
