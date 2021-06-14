@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ===== CSS ===== -->
+    <!--========== CSS ==========-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="assets/vendor/sb-admin/sb-admin-2.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--========== END CSS ==========-->
 
     <title>SIPUPIL</title>
 </head>
@@ -35,7 +34,9 @@
             </div>
         </div>
     </header>
+    <!--========== END HEADER ==========-->
 
+    <!--========== NAVBAR ==========-->
     <div class="l-navbar" id="navbar">
         <nav class="nav">
             <div>
@@ -49,7 +50,7 @@
                         <span class="nav__name">Dashboard</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="editprofile_mhs.html" class="nav__link">
                         <ion-icon name="person-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Profile</span>
                     </a>
@@ -57,6 +58,11 @@
                     <a href="#" class="nav__link">
                         <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Forum</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Verifikasi</span>
                     </a>
 
                     <div class="nav__link collapse__nav">
@@ -80,36 +86,4 @@
             </a>
         </nav>
     </div>
-
-    <!--========== CONTENTS ==========-->
-    <main>
-        <section>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates
-                magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates
-                magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates
-                magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?
-            </p>
-        </section>
-    </main>
-
-    <!-- ===== IONICONS ===== -->
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-
-    <!-- ===== MAIN JS ===== -->
-    <script src="assets/js/main.js"></script>
-
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="assets/vendor/sb-admin/sb-admin-2.min.js"></script>
-</body>
-
-</html>
+    <!--========== END NAVBAR ==========-->
