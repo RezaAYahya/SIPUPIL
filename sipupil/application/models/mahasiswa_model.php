@@ -30,4 +30,11 @@ class mahasiswa_model extends CI_Model
           return false;
         };
     }
+
+    public function registration($data){
+        foreach($data as $ddb){
+        }
+    }
+
+    // public function ge
 }

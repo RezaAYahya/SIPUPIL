@@ -22,19 +22,16 @@ class Forum extends CI_Controller
         $user_d['data_m'] = $this->mahasiswa_model->getprofile($data); //MODELNYA BERHASIL
         //css harus selalu diupdate apabila berganti halaman fungsionalitas
         $user_d['css'] = 'forumMhs';
-        $nim = $user_d['data_m']['NIM']
-        $user_d['matkul'] = $this->forum_model->loadavailableforums($user_d[]);
-
-        // $hasi
+        $nim = $user_d['data_m']['NIM'];
         
-        // if ($user_d != null){
-        //   $this->load->view('templates/dashboard_header',$user_d);
-        //   $this->load->view('mahasiswa/forum_Mahasiswa',$user_d);
-        //   $this->load->View('templates/dashboard_footer',$user_d);
-        // }
-        // else{
-        //   echo "error";
-        // }  
+        if ($user_d != null){
+          $this->load->view('templates/dashboard_header',$user_d);
+          $this->load->view('mahasiswa/forum_Mahasiswa',$user_d);
+          $this->load->View('templates/dashboard_footer',$user_d);
+        }
+        else{
+          echo "error";
+        }  
         }
 
     public function editForum(){
@@ -47,6 +44,20 @@ class Forum extends CI_Controller
         $this->load->view('mahasiswa/buat_forum',$user_d);
         $this->load->View('templates/dashboard_footer',$user_d);
 
+    }
+
+    public function tes(){
+
+        $data = [
+            'Isi_Forum' => 'Hewan Hewan apa yang Hewan?',
+            'ID_Matkul' => '1',
+            'NIM' => '1301180063'
+        ];
+
+        $this->forum_model->buatforum2($data);
+        echo "berhasil";
+        // $this->forum_model->loadavailableforums();
+        // echo $data['isi_forum'][0];
     }
 
 }

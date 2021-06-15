@@ -15,17 +15,24 @@ class registrasimk_model extends CI_Model
             return false;
         }
     }
-    // memasukkan data matkul yang menjadi pilihan mahasiswa
-    public function ambil($data){
-      $a = $this->db->where('Mata_Kuliah', $data['matakuliah'])->get('matakuliah')->row_array();
-      $b = $this->db->where('ID_registrasi', $a['ID_Matkul'])->get('pilihan')->row_array();
-      $c = $this->db->query('select max(ID_terpilih) from terpilih');
+    
+//meampilkan matkul dan id idnya
+    public function piihanmatkul(){
+      $query = $this->db->query("SELECT * FROM jadwalmatakuliah JOIN matakuliah ON jadwalmatakuliah.ID_Matkul = matakuliah.ID_Matkul");
+      if ($query != null) {
+        return $query->result_array();
+      }else {
+        return 1;
+      }
+    }
 
-      $this->db->query("INSERT INTO `terpilih` (`ID_terpilih`, `ID_Registrasi`, `NIM`) VALUES ($VarA,$VarB, '1301180063');");
+    public function ambilmatkul($data){ #data berupa nim dan ID_inputkelas prodi
+      $this->db->insert('dipilih',$data);
     }
 
     //menghapus pilihan sesuai dengan nama mata kuliah yang dipilih.
-    public function drop(){
-      $this->db->query("DELETE terpilih from terpilih INNER JOIN pilihan ON terpilih.ID_Registrasi=pilihan.ID_Registrasi INNER JOIN matakuliah ON pilihan.ID_Matkul=matakuliah.Mata_Kuliah WHERE matakuliah.Mata_Kuliah like 'kalkulus");
+    public function drop($data){ #data berupa ID_InputKelasProdi dan NIM
+      $sql = "DELETE FROM dipilih where NIM = ? AND ID_InputKelasProdi =?";
+      $this->db->query($sql,array($data['NIM'], $data['ID_InputKelasProdi']));
     }
 }

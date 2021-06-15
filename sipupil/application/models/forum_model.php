@@ -4,27 +4,44 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class forum_model extends CI_Model
 {
     //Fungsi yang mengembalikan data yang row array
-    public function loadingforum()
-    {
-      #melihat semua forum
-      $query = $this->db->get('tb_forum');
-      if ($query->num_rows() > 0) {
-          return $query->result_array(); #return as array
-      } else {
-          return false;
-      }
-    }
 
     //parameter dari model ini yaitu id matkul terpilih
-    public function loadavailableforums($data){
-        $query = $this->db->where('NIM',$data['nim'])->join('Matakuliah','ID_Matkul')->get();
+    public function loadavailableforums(){  #DONE
+        $query = $this->db->get('forum');
+
         if ($query->num_rows() > 0) {
-            return $query->row_array();
+            return $query->result_array(); #return as array
         } else {
             return 1;
         }
                     
     }
+
+    // public function buatforum($data){ #data berisi data NIM, ID_Matkul)
+    //     $this->db->set('ID_Matkul',$data['ID_Matkul']);
+    //     $this->db->set('Isi_Forum',$data['isi_forum']);
+    //     $this->db->set('NIM',$data['NIM']);
+    //     $this->db->insert('forum');
+    // }
+
+    public function buatforum2($data){ #data berisi data NIM, ID_Matkul)
+        $this->db->insert('forum',$data);
+    }
+
+
+    public function editforum($data){ //$data berisi Isi Forum, jangan lupa buat instansiasi di controller
+        $this->db->set('Isi_Forum',$data['Isi_Forum']);
+        $this->db->update('Isi_Forum');
+    }
+
+    public function loadforumdosen($data){
+        $this->db->select('forum');
+        $this->db->join('matakuliah','ID_Matkul');
+        $this->db->join('jadwalmatakuliah','ID_Matkul');
+        $this->db->where('NIDN',$data['NIDN'])->get();
+    }
+
+    // public function load
 
     // public function loadingforumbyID($forum_id)
     // {

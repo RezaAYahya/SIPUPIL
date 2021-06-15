@@ -80,21 +80,34 @@
                         <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Forum</span>
                     </a>
+<<<<<<< Updated upstream
 
                     <div class="nav__link collapse__nav <?php if ($css == 'registrasiMhs')  echo 'active'; ?>">
+=======
+                    
+                    <div class="nav__link collapse__nav">
+>>>>>>> Stashed changes
                         <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Registrasi</span>
 
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
 
                         <ul class="collapse__menu">
+<<<<<<< Updated upstream
                             <a href="<?php echo base_url() . 'RegistrasiMK' ?>" class="collapse__sublink">Registrasi</a>
+=======
+                            <a href="<?php echo base_url().'RegistrasiMK' ?>" class="collapse__sublink">Registrasi</a>
+>>>>>>> Stashed changes
                             <a href="#" class="collapse__sublink">Status</a>
                             <a href="#" class="collapse__sublink">KSM</a>
                         </ul>
                     </div>
 
+<<<<<<< Updated upstream
                     <div class="nav__link collapse__nav <?php if ($css == 'jadwalMhs')  echo 'active'; ?>">
+=======
+                    <div class="nav__link collapse__nav">
+>>>>>>> Stashed changes
                         <ion-icon name="time-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Jadwal</span>
 
@@ -106,7 +119,11 @@
                         </ul>
                     </div>
 
+<<<<<<< Updated upstream
                     <a href="#" class="nav__link <?php if ($css == 'prsMhs')  echo 'active'; ?>">
+=======
+                    <a href=" class="nav__link">
+>>>>>>> Stashed changes
                         <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">PRS</span>
                     </a>
