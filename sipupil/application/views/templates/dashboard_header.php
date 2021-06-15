@@ -101,7 +101,7 @@
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
 
                         <ul class="collapse__menu">
-                            <a href="#" class="collapse__sublink">Kelas</a>
+                            <a href="<?php echo base_url() . 'mahasiswa/viewJadwal' ?>" class="collapse__sublink">Kelas</a>
                             <a href="#" class="collapse__sublink">Ujian</a>
                         </ul>
                     </div>
