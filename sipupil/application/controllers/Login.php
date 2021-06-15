@@ -103,6 +103,6 @@ class Login extends CI_Controller
     $this->session->unset_userdata('email');
     $this->session->unset_userdata('role_id');
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> You have been logout</div>');
-    redirect('auth');
+    redirect('login');
   }
 }

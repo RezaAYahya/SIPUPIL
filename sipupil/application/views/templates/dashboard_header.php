@@ -113,7 +113,7 @@
                 </div>
             </div>
 
-            <a href="#" class="nav__link">
+            <a href="<?= base_url() . 'login/logout' ?>" class="nav__link">
                 <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
                 <span class="nav__name">Log Out</span>
             </a>
