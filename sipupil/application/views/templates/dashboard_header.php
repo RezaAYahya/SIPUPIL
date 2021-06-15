@@ -41,7 +41,7 @@
     <!--========== HEADER ==========-->
     <header class="header">
         <div class="header__container">
-            <img src="assets/img/perfil.jpg" alt="" class="header__img">
+            <img src="<?= base_url() ?>assets/img/perfil.jpg" alt="" class="header__img">
             <!-- Data mahasiswa diakses dengan variable $data_m karena pada controller diinisialisasi dengan user_d['data_m'] -->
             <a href="#" class="header__logo"><?php echo $this->session->userdata('Name'); ?></a>
             <div class="header__search">
@@ -65,36 +65,36 @@
                     <a href="#" class="nav__logo">SIPUPIL</a>
                 </div>
                 <div class="nav__list">
-                    <a href="<?php echo base_url() . 'mahasiswa' ?>" class="nav__link active">
+                    <a href="<?php echo base_url() . 'mahasiswa' ?>" class="nav__link <?php if ($css == 'dashboardMhs')  echo 'active'; ?>">
                         <ion-icon name="home-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Dashboard</span>
                     </a>
 
-                    <a href="<?php echo base_url() . 'mahasiswa/editmahasiswa' ?>" class="nav__link">
+                    <a href="<?php echo base_url() . 'mahasiswa/editmahasiswa' ?>" class="nav__link <?php if ($css == 'editMhs')  echo 'active'; ?>">
                         <ion-icon name="person-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Profile</span>
                     </a>
 
                     <!-- 1 = active 0 = tidak aktif -->
-                    <a href="<?php echo base_url() . 'forum/forumMahasiswa' ?>" class="nav__link">
+                    <a href="<?php echo base_url() . 'forum/forumMahasiswa' ?>" class="nav__link <?php if ($css == 'forumMhs')  echo 'active'; ?>">
                         <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Forum</span>
                     </a>
 
-                    <div class="nav__link collapse__nav">
+                    <div class="nav__link collapse__nav <?php if ($css == 'registrasiMhs')  echo 'active'; ?>">
                         <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Registrasi</span>
 
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
 
                         <ul class="collapse__menu">
-                            <a href="registrasi.html" class="collapse__sublink">Registrasi</a>
+                            <a href="<?php echo base_url() . 'RegistrasiMK' ?>" class="collapse__sublink">Registrasi</a>
                             <a href="#" class="collapse__sublink">Status</a>
                             <a href="#" class="collapse__sublink">KSM</a>
                         </ul>
                     </div>
 
-                    <div class="nav__link collapse__nav">
+                    <div class="nav__link collapse__nav <?php if ($css == 'jadwalMhs')  echo 'active'; ?>">
                         <ion-icon name="time-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Jadwal</span>
 
@@ -106,7 +106,7 @@
                         </ul>
                     </div>
 
-                    <a href="<?php echo base_url() . 'RegistrasiMK' ?>" class="nav__link">
+                    <a href="#" class="nav__link <?php if ($css == 'prsMhs')  echo 'active'; ?>">
                         <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">PRS</span>
                     </a>
