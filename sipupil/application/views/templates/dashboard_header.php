@@ -24,6 +24,11 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
     <?php } ?>
+    <?php if($css == 'forumMhs'){ ?>
+        <link rel="stylesheet" href="<?php echo base_url().'assets/css/forum_mhs.css'?>">
+    <?php } ?>
+
+
 
     <link href="<?php echo base_url().'assets/vendor/fontawesome-free/css/all.min.css'?>" rel="stylesheet" type="text/css">
     <link
@@ -73,11 +78,10 @@
                     </a>
 
                     <!-- 1 = active 0 = tidak aktif -->
-                    <a href="<?php echo base_url().'forum/forumMahasiswa'?>" class="nav__link">
+                     <a href="<?php echo base_url().'forum/forumMahasiswa'?>" class="nav__link">
                         <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Forum</span>
                     </a>
-
                     
                     <div class="nav__link collapse">
                         <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
