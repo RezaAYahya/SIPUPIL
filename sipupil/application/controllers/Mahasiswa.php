@@ -14,11 +14,10 @@ class Mahasiswa extends CI_Controller
 
   public function index()
   {
-
     $user['email'] = $this->session->userdata('email');
     $user_d['data_m'] = $this->mahasiswa_model->getprofile($user);
     $user_d['css'] = 'dashboardMhs';
-    // echo $user;
+    // echo $user_d['data_m']['Name'];
 
     if ($user_d != null) {
       // echo implode($user_d['data_m']);

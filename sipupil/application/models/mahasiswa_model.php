@@ -15,6 +15,15 @@ class mahasiswa_model extends CI_Model
         }
     }
 
+    public function allmahasiswa(){
+        $query = $this->db->get('mahasiswa');
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return 1;
+        }
+    }
+
     public function getprofile($user)
     {
         // pada class diagram, kami menentukan NIM sebagai parameter pencarian profile,namu pada menu login kami memasukkan email sebagai ketentuan untuk LogicException

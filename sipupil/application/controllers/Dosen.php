@@ -13,7 +13,8 @@ class Dosen extends CI_Controller
     {
 
         $user['email'] = $this->session->userdata('email');
-        $user_d['data_m'] = $this->mahasiswa_model->getprofile($user);
+        $user_d['data_d'] = $this->dosen_model->getprofile($user);
+        $user_d['css'] = 'dashboardMhs';
         // echo $user;
 
         if ($user_d != null){
